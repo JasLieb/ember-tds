@@ -1,0 +1,19 @@
+<h1 class="h1" style="text-align: center;" placeholder="Entrez votre text">Une saisie de texte banale</h1>
+
+{{textarea maxlength=100 value=model.content class="form-control"}}
+
+<br/>
+<button {{action "save" model}} class="btn btn-primary">SAUVEGARDER</button>
+<button {{action "clear" model}} class="btn btn-primary">VIDER LA ZONE</button>
+<br/><br/>
+
+<div class="alert alert-info">
+  <p class="text-info">Nombre de caractères restant : {{model.size}}</p>
+</div>
+
+{{#if model.alertVisible}}
+  <div class="alert {{model.style}}">
+    {{{model.info}}}
+  </div>
+{{/if}}
+

@@ -1,0 +1,15 @@
+<h1 style="text-align: center;">Une sélection de divers services</h1>
+<div class="container" style="background-color: #2e6da4; width: 50%; height: 100%; margin-top: 50px; " >
+
+  <h2>{{plural model.countActive "Aucun service selectionne" "service selectionne" "services selectionnes"}}</h2>
+
+  {{#each model.service as |serv|}}
+    <button {{action "toggleActive" serv}} class="btn btn-{{if serv.active 'success' 'info'}}" style="height: 100%; width: 100%;">
+      <p class="text-center">{{serv.name}} prix : {{serv.price}}</p>
+    </button>
+  {{/each}}
+  <hr/>
+  <p style="color: #FFFFFF">Prix total : {{format-currency model.sumActive}}</p>
+
+</div>
+{{outlet}}

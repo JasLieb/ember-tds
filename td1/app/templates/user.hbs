@@ -1,0 +1,15 @@
+<h1 class="alert-info" style="text-align: center;">The user</h1>
+<div class="input-lg">
+  Nom : {{model.name}}
+  {{#link-to "user.update" class="btn btn-default"}}Modifier{{/link-to}}
+</div>
+<br>
+
+<br><h2>Ses skills : </h2>
+<ul class="list-group">
+  {{#each model.skills as |skill|}}
+    <li class="list-group-item">{{skill}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}
