@@ -1,0 +1,41 @@
+{{input value=model.filter class="form-control mb-1" placeholder="Filtrez votre recherche"}}
+
+<div class="list-group">
+  <table class="table">
+    {{#each model.contacts as |contact|}}
+      <tr class="table-">
+        <td class="tab-content">
+          {{contact.nom}}
+        </td>
+        <td class="tab-content">
+          {{contact.prenom}}
+        </td>
+        <td class="tab-content">
+          {{contact.email}}
+        </td>
+        <td>
+          {{#link-to "contacts.update" class="btn btn-info"}}
+            {{fa-icon "pencil"}}
+          {{/link-to}}
+          <button {{action "delete" contact}} class="btn btn-danger">{{fa-icon "times"}}</button>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+
+</div>
+
+
+
+<div class="row-1 m-1">
+
+  {{#link-to "contacts.add" class="btn btn-dark"}}
+    {{fa-icon "plus"}} Ajouter contact
+  {{/link-to}}
+
+  {{#if model.deletedsCount}}
+    <button {{action "cancelDel" model.deleteds}}
+      class="btn btn-secondary">{{fa-icon "undo"}} Annuler suppression ({{model.deletedsCount}})</button>
+  {{/if}}
+</div>
+{{outlet}}
