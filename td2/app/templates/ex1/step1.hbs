@@ -1,0 +1,36 @@
+<div class="row-md-1">
+
+    <div class="col-md-5">
+      {{multi-select elements=model.dispoItems selectedIds=model.dispoItemsIds_}}
+    </div>
+
+    <div class="col-md-2">
+      <button class="btn btn-light btn-block"
+        {{action "addToIncluded" model.dispoItems model.includedItems model.dispoItems_}}>
+        {{fa-icon "step-forward"}}
+      </button>
+
+      <button class="btn btn-light btn-block"
+        {{action "addAllToIncluded" model.dispoItems model.includedItems }}>
+        {{fa-icon "fast-forward"}}
+      </button>
+
+      <button class="btn btn-light btn-block"
+        {{action "removeAllFromIncluded"  model.includedItems model.dispoItems }}>
+        {{fa-icon "fast-backward"}}
+      </button>
+
+      <button class="btn btn-light btn-block"
+        {{action "removeFromIncluded" model.includedItems model.dispoItems model.includedItems_}}>
+        {{fa-icon "step-backward"}}
+      </button>
+    </div>
+
+    <div class="col-md-5">
+      {{multi-select elements=model.includedItems selectedIds=model.includedItemsIds_}}
+    </div>
+</div>
+<br/>
+
+
+{{outlet}}
