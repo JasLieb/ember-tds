@@ -1,0 +1,18 @@
+<div class="ui icon message">
+  <i class="large icons">
+    <i class="user icon"></i>
+    <i class="inverted corner add icon"></i>
+  </i>
+  <h3 class="ui header">Add a developer</h3>
+</div>
+
+<form class="ui form">
+
+  {{ui-input-field type ="text" name="name" value=model.name }}
+
+</form>
+<div class="ui segment">
+  <a {{action "addNew" model}} class="ui positive button">Validate</a>
+  {{#link-to "developers" class="ui negative button"}}Cancel{{/link-to}}
+</div>
+{{outlet}}
