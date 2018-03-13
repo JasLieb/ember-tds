@@ -6,8 +6,6 @@ export default DS.Model.extend({
   startDate: DS.attr('date'),
   dueDate: DS.attr('date'),
   owner: DS.belongsTo('developer'),
-  toString(){
-    return this.get('name')+"   "+this.get('description')+"   ";//+this.get('startDate').toDateString()+
-      "   "+this.get('dueDate').toDateString()+"   ";
-  }
+  tags: DS.hasMany('tag'),
+  stories: DS.hasMany('story')
 });
