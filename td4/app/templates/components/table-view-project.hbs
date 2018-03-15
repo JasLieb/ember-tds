@@ -1,0 +1,37 @@
+<table class="ui unstackable table">
+  <thead>
+  <tr>
+    <th >{{title}}</th>
+    <th >Description</th>
+    <th >Start Date</th>
+    <th >Due Date</th>
+    <th >Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each datas as |object|}}
+    <tr>
+      <td>{{object.name}}</td>
+      <td>{{object.description}}</td>
+      <td>{{format-date object.startDate}}</td>
+      <td>{{format-date object.dueDate}}</td>
+
+      <td>
+        {{#link-to "project" object.id class="fluid ui labeled icon mini button right floated"}}
+          <i class="ui edit icon"></i> Edit
+        {{/link-to}}
+
+        <a class="fluid ui labeled icon mini negative button right floated" {{action "delete" object}}>
+          <i class="ui remove icon"></i> Delete
+        </a>
+      </td>
+    </tr>
+  {{else}}
+    <tr>
+      <td colspan="6">No {{title}} found</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+{{yield}}

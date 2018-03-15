@@ -1,0 +1,30 @@
+<table class="ui unstackable table">
+  <thead>
+  <tr>
+    <th>{{title}}</th>
+    <th class="right aligned">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each datas as |object|}}
+    <tr>
+      <td>{{object}}</td>
+
+      <td>
+        <a class="ui labeled icon tiny negative button right floated" {{action "delete" object}}>
+          <i class="ui remove icon"></i> Delete
+        </a>
+        <a class="ui labeled icon tiny button right floated">
+          <i class="ui edit icon"></i> Edit
+        </a>
+      </td>
+    </tr>
+  {{else}}
+    <tr>
+      <td colspan="2">No {{title}} found</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+{{yield}}

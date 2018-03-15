@@ -1,0 +1,31 @@
+<div class="ui breadcrumb">
+  <a class="section">Projects</a>
+  <i class="right chevron icon divider"></i>
+  <a class="section">A Project</a>
+  <i class="right arrow icon divider"></i>
+  <div class="active section">{{model.name}}</div>
+</div>
+
+<div class="ui icon message row">
+  <div class="ui column">
+    <i class="huge icons">
+      <i class="folder open outline icon"></i>
+    </i>
+  </div>
+  <div class="ui content column">
+    <h2 class="ui huge header">{{model.name}}</h2>
+    <p class="ui text">{{model.description}}</p>
+  </div>
+</div>
+
+<h3>Stories</h3>
+
+{{#link-to "developers.new" class="ui blue button"}}
+  <i class="ui plus icon"></i>
+  Add new Story in this project
+{{/link-to}}
+
+
+
+
+{{outlet}}
