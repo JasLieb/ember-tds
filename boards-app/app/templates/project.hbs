@@ -32,9 +32,11 @@
       </div>
       <div class="description">
         {{story.description}}
-        {{#each story.tags as |tag|}}
-          <a class="ui {{tag.color}} label">{{tag.title}}</a>
-        {{/each}}
+        {{#if story.tags}}
+          {{#each story.tags as |tag|}}
+            <a class="ui {{tag.color}} label">{{tag.title}}</a>
+          {{/each}}
+        {{/if}}
       </div>
     </div>
   </div>

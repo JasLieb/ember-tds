@@ -1,0 +1,20 @@
+<div>
+  {{#ui-form oldValue=model.oldTag newValue=model.newTag  validation="save" cancel="cancel"
+             bigIcon='tag' smallIcon='edit' header='Tag' description='Editing an existing tag'}}
+    <div class="field">
+      <label id="" class="" for="frmEdit-title">Title</label>
+      <div id="div-frmEdit-title" class="ui input">
+        {{input id="frmEdit-title" value=model.newTag.title placeholder="title"}}
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui action input">
+        <select onchange={{action (mut model.newTag.color) value="target.value"}} class="ui compact selection dropdown">
+        {{#each model.colors as |color|}}
+          <option value="{{color}}">{{color}}</option>
+        {{/each}}
+        </select>
+      </div>
+    </div>
+  {{/ui-form}}
+</div>{{outlet}}
